@@ -17,3 +17,5 @@ Add them to [Settings ⇢ Secrets ⇢ New Repository Secret.](https://docs.githu
 # Credits
 - [Jainam Oswal](https://github.com/jainamoswal/BotStatus).
 - [Me](https://xditya.me)
+
+https://heroku.com/deploy?template=https://github.com/NEON-BOTZ/BotStatus
