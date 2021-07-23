@@ -32,7 +32,7 @@ async def BotzHub():
             print("[INFO] starting to check uptime..")
             await user_bot.edit_message(int(chnl_id), msg_id, "**@VKPROJECTS Bot's Status.**\n\n`Performing a periodic check...`")
             c = 0
-            edit_text = "**⚜️ @VKPROJECTS Bot's Status ⚜️**\n\n**Check This UpTime List :**\n\n"
+            edit_text = "**⚜️ @VKPROJECTS Bot's Status ⚜️\n\nCheck This UpTime List :**\n\n"
             for bot in bots:
                 print(f"[INFO] checking @{bot}")
                 snt = await user_bot.send_message(bot, "/start")
@@ -51,9 +51,9 @@ async def BotzHub():
                 msg = history.messages[0].id
                 if snt.id == msg:
                     print(f"@{bot} is down.")
-                    edit_text += f"@{bot} status: Down❌\n"
+                    edit_text += f"@{bot} : Down ❌\n"
                 elif snt.id + 1 == msg:
-                    edit_text += f"@{bot} status: Up⚡\n"
+                    edit_text += f"@{bot} : Up ⚡\n"
                 await user_bot.send_read_acknowledge(bot)
                 c += 1
                 await user_bot.edit_message(int(chnl_id), msg_id, edit_text)
@@ -62,7 +62,7 @@ async def BotzHub():
             day = dt.now(k).strftime("%d")
             year =  dt.now(k).strftime("%Y")
             t = dt.now(k).strftime("%H:%M:%S")
-            edit_text +=f"\n**Last Checked:** \n`{t} - {day} {month} {year} [IST]`\n\n__Bots status are auto-updated every 2 hours__"
+            edit_text +=f"\n**𝙇𝙖𝙨𝙩 𝙪𝙥𝙙𝙖𝙩𝙚𝙙 & 𝙘𝙝𝙚𝙘𝙠𝙚𝙙 𝙤𝙣:** \n`{t} - {day} {month} {year} [IST]`\n\n**__💡Bot Updated Every 2 Hours__**"
             await user_bot.edit_message(int(chnl_id), msg_id, edit_text)
             print(f"Checks since last restart - {c}")
             print("Sleeping for 2 hours.")
