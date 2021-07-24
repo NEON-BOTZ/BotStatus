@@ -51,9 +51,9 @@ async def BotzHub():
                 msg = history.messages[0].id
                 if snt.id == msg:
                     print(f"@{bot} is down.")
-                    edit_text += f"@{bot} : Down ❌\n"
+                    edit_text += f"@{bot} :    Down ❌\n"
                 elif snt.id + 1 == msg:
-                    edit_text += f"@{bot} : Up ⚡\n"
+                    edit_text += f"@{bot} :    Up ✅\n"
                 await user_bot.send_read_acknowledge(bot)
                 c += 1
                 await user_bot.edit_message(int(chnl_id), msg_id, edit_text)
@@ -65,7 +65,7 @@ async def BotzHub():
             edit_text +=f"\n**Lastt Updated & Checked On:** \n`{t} - [IST]`\n\n**__This Status Updated Every 1 Hour__**"
             await user_bot.edit_message(int(chnl_id), msg_id, edit_text)
             print(f"Checks since last restart - {c}")
-            print("Sleeping for 1 hour.")
-            await asyncio.sleep(1 * 60)
+            print("Sleeping for 2 hour.")
+            await asyncio.sleep(2 *60 * 60)
 
 user_bot.loop.run_until_complete(BotzHub())
